@@ -1,12 +1,12 @@
-import {Dimensions} from 'react-native';
+import {Dimensions} from 'react-native'
 
-const {width, height} = Dimensions.get('window');
+const {width, height} = Dimensions.get('window')
 
 // Live:
 // Dev:
 
 const appConfigs = {
-  hostURL: 'https://',
+  hostURL: 'https://ischau.org',
   oneSignalID: '',
   colors: {
     primary: '#6CD4E5',
@@ -27,11 +27,11 @@ const appConfigs = {
     MediumItalic: 'GoogleSans-MediumItalic',
     Regular: 'GoogleSans-Regular',
   },
-};
+}
 
-const fonts = appConfigs.fonts;
-const sizes = appConfigs.sizes;
-const colors = appConfigs.colors;
+const fonts = appConfigs.fonts
+const sizes = appConfigs.sizes
+const colors = appConfigs.colors
 
-export {fonts, sizes, colors};
-export default appConfigs;
+export {fonts, sizes, colors}
+export default appConfigs
