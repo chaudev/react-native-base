@@ -4,6 +4,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import Signin from '~/views/auth/signin'
 import {useGlobalContext} from '~/provider/AppProvider'
 import SplashScreen from 'react-native-splash-screen'
+import HomeScreen from '~/views/home'
+import TabNavigator from './tab-nagivator'
 
 const Stack = createNativeStackNavigator<TRootNavigator>()
 
@@ -16,7 +18,7 @@ const RootNavigator = () => {
     }
   }, [mainLoading])
 
-  console.log('user: ', user)
+  console.log('-- user: ', user)
 
   if (!user?.token) {
     return <Signin />
@@ -25,7 +27,7 @@ const RootNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Login" component={Signin} />
+        <Stack.Screen name="RootTabs" component={TabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   )

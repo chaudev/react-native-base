@@ -40,7 +40,7 @@ const AppProvider: FC<{children: React.ReactNode}> = ({children}) => {
     mainLoading,
     setMainLoading,
     user,
-    setUser,
+    setUser: setUser,
   }
 
   return <GlobalContext.Provider value={contextValue}>{children}</GlobalContext.Provider>

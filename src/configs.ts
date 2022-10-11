@@ -20,12 +20,10 @@ const appConfigs = {
     dH: height,
   },
   fonts: {
-    Bold: 'GoogleSans-Bold',
-    BoldItalic: 'GoogleSans-BoldItalic',
-    Italic: 'GoogleSans-Italic',
-    Medium: 'GoogleSans-Medium',
-    MediumItalic: 'GoogleSans-MediumItalic',
-    Regular: 'GoogleSans-Regular',
+    Bold: 'SFProDisplay-Bold',
+    Medium: 'SFProDisplay-Medium',
+    Semibold: 'SFProDisplay-Semibold',
+    Regular: 'SFProDisplay-Regular',
   },
 }
 

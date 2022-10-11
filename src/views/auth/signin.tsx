@@ -1,15 +1,23 @@
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, StatusBar} from 'react-native'
 import React from 'react'
 import LoginForm from '~/common/components/Auth/login-form'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
+import appConfigs from '~/configs'
+import {useGlobalContext} from '~/provider/AppProvider'
 
 const Signin = () => {
   const insets = useSafeAreaInsets()
 
-  async function onLogin() {}
+  const {setUser} = useGlobalContext()
+
+  async function onLogin(params: any) {
+    !!setUser && setUser({token: 'conmeno'})
+  }
 
   return (
-    <View style={[styles.container, {marginTop: insets.top}]}>
+    <View style={[styles.container, {paddingTop: insets.top + 16}]}>
+      <StatusBar barStyle="dark-content" />
+
       <Text style={styles.textTitle}>Đăng nhập</Text>
       <Text style={styles.textTitle}>Logo</Text>
 
@@ -31,5 +39,6 @@ const styles = StyleSheet.create({
     color: 'red',
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily: appConfigs.fonts.Bold,
   },
 })

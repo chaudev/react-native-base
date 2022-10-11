@@ -22,6 +22,8 @@ const LoginForm: FC<ILoginForm> = ({onLogin}) => {
 
   const onSubmit = (data: {userName: string; password: string}) => {
     console.log(data)
+
+    onLogin(data)
   }
 
   return (
