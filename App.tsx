@@ -21,9 +21,9 @@ const App = () => {
   return (
     <View style={{flex: 1}}>
       <StatusBar translucent={true} backgroundColor="rgba(0,0,0,0)" />
-      <AppProvider>
+      {/* <AppProvider>
         <RootNavigator />
-      </AppProvider>
+      </AppProvider> */}
     </View>
   )
 }

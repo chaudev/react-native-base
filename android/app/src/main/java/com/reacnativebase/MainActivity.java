@@ -1,42 +1,16 @@
 package com.reacnativebase;
 
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-
 import org.devio.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
 
-  private void setStatusBarTransparnt() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      Window window = getWindow();
-      window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-      window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-      View decorView = window.getDecorView();
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-      } else {
-        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-      }
-      window.setStatusBarColor(Color.TRANSPARENT);
-    }
-  }
-
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    SplashScreen.show(this);
-
-    setStatusBarTransparnt();
+    SplashScreen.show(this, R.style.SplashScreenTheme, false );
 
     super.onCreate(savedInstanceState);
   }
