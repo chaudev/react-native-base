@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import Tabs from '~/common/components/TabNavigator'
 
 function HomeScreen() {
   return (
@@ -28,16 +29,7 @@ function TabNavigator() {
     <Tab.Navigator
       screenOptions={({route}) => ({
         tabBarIcon: ({focused, color, size}) => {
-          let iconName
-
-          if (route.name === 'Home') {
-            iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline'
-          } else if (route.name === 'Settings') {
-            iconName = focused ? 'ios-list-box' : 'ios-list'
-          }
-
-          // You can return any component that you like here!
-          return <Ionicons name={iconName + ''} size={size} color={color} />
+          return <Tabs route={route} focused={focused} />
         },
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',

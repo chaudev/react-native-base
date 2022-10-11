@@ -1,6 +1,6 @@
 import {View, Text, StyleSheet, StatusBar} from 'react-native'
 import React from 'react'
-import LoginForm from '~/common/components/Auth/login-form'
+import LoginForm from '~/common/components/auth'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
 import appConfigs from '~/configs'
 import {useGlobalContext} from '~/provider/AppProvider'
