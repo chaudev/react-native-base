@@ -8,11 +8,12 @@
  *
  */
 
-import React from 'react'
+import React, {useEffect} from 'react'
 import {LogBox, StatusBar, View} from 'react-native'
+import {SafeAreaProvider} from 'react-native-safe-area-context'
 
 import RootNavigator from '~/navigators/root'
-import AppProvider from '~/provider/AppProvider'
+import AppProvider, {useGlobalContext} from '~/provider/AppProvider'
 import Signin from '~/views/auth/signin'
 
 LogBox.ignoreAllLogs()
@@ -21,9 +22,11 @@ const App = () => {
   return (
     <View style={{flex: 1}}>
       <StatusBar translucent={true} backgroundColor="rgba(0,0,0,0)" />
-      {/* <AppProvider>
-        <RootNavigator />
-      </AppProvider> */}
+      <SafeAreaProvider>
+        <AppProvider>
+          <RootNavigator />
+        </AppProvider>
+      </SafeAreaProvider>
     </View>
   )
 }
